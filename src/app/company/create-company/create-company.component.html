@@ -7,94 +7,115 @@
     <div class="col-md-4">
     <div class="form-group">
       <label for="name">Name</label>
-      <input type="text" formControlName="name" class="form-control" id="name" required>
+      <input type="text" id="name" formControlName="name" class="form-control" required>
     </div>
     </div>
 
     <div class="col-md-4">
     <div class="form-group">
       <label for="email">Email</label>
-      <input  type="text" formControlName="email" class="form-control" id="email">
+      <input  type="text" id="email" formControlName="email" class="form-control">
     </div></div>
 
     <div class="col-md-4">
     <div class="form-group">
       <label for="phone">Phone</label>
-      <input type="text"formControlName="phone" class="form-control" id="phone">
+      <input type="text" id="phone"formControlName="phone" class="form-control">
     </div></div>
 
     <div class="col-md-4">
     <div class="form-group">
         <label for="contactPerson">Contact Person</label>
-        <input type="text" formControlName="contactPerson" class="form-control" id="contactPerson">
+        <input type="text" id="contactPerson" formControlName="contactPerson" class="form-control">
       </div></div>
     
       <div class="col-md-4">
         <div class="form-group">
             <label for="addressLine1">Address Line1</label>
-            <input type="text" formControlName="addressLine1" class="form-control" id="addressLine1">
+            <input type="text" id="addressLine1" formControlName="addressLine1" class="form-control">
           </div></div>
 
           <div class="col-md-4">
           <div class="form-group">
               <label for="addressLine2">Address Line2</label>
-              <input type="text" formControlName="addressLine2" class="form-control" id="addressLine2">
+              <input type="text" id="addressLine2" formControlName="addressLine2" class="form-control" >
             </div></div>
 
             <div class="col-md-4">
             <div class="form-group">
                 <label for="town">Town</label>
-                <input type="text" formControlName="town" class="form-control" id="town">
+                <input type="text" id="town" formControlName="town" class="form-control">
               </div></div>
               
               
               <div class="col-md-4">
               <div class="form-group">
                   <label for="county">County</label>
-                  <input type="text" formControlName="county" class="form-control" id="county">
+                  <input type="text" id="county" formControlName="county" class="form-control">
                 </div></div>
 
 
                 <div class="col-md-4">
                 <div class="form-group">
                     <label for="postcode">Postcode</label>
-                    <input type="text" formControlName="postcode" class="form-control" id="postcode">
+                    <input type="text" id="postcode" formControlName="postcode" class="form-control" >
                   </div></div>
 
                         <div class="col-md-4">
                           <div class ="form-group">
                             <label for="noOfLicense">Number Of Licenses Per Site(Bubll Master)</label>
-                            <input type="text" formControlName="noOfLicense" class="form-control" id="noOfLicense">
+                            <input type="text" id="noOfLicense" formControlName="noOfLicense" class="form-control" >
                           </div>
                         </div>
 
                         <div class="col-md-4">
                           <div class="form-group">
                               <label for="validFrom">ValidFrom</label>
-                              <input type="text" formControlName="validFrom" class="form-control" id="validFrom" 
+                              <input type="text" id="validFrom" formControlName="validFrom" class="form-control"  
                            bsDatepicker  />
                             </div></div>
 
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="ValidTo">ValidTo</label>
-                                <input id="validTo" formControlName="validTo"
-                            type="text" bsDatepicker class="form-control" />            
+                                <input type="text" id="validTo" formControlName="validTo"class="form-control"
+                             bsDatepicker />            
                               </div></div>
 
 
                               <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="status">Status</label>
-                                    <select class="form-control" ng-model="selectedName" ng-options="employee.id as employee.name for employee in employees" ng-init="">
-                                      <option value="0" selected="selected">Name1</option>
-                                      <option value="1">Name2</option>
-                                      <option value="2">Name3</option>
+                                    <select class="form-control" ng-model="selectedName">
+                                      <option value="1" selected="selected">Active </option>
+                                      <option value="0" selected="selected">InActive</option>                                 
                                      </select>  
                                   </div></div>
 
+                                  <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="support">Support</label>
+                                        <select class="form-control" ng-model="selectedName">
+                                          <option value="1" selected="selected">Yes</option>
+                                          <option value="0" selected="selected">No</option>                                 
+                                         </select>  
+                                      </div></div>
 
-                                
+                                      <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="support">Default Language</label>
+                                            <select class="form-control" ng-model="selectedName">                                                           
+                                             </select>  
+                                          </div></div>
+
+                                          <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="fileupload">Upload</label>
+                                            <input type="file" class="form-control" [(ngModel)]="model.fileupload">
+                                        </div>
+                                      </div>
+    
+    
 
                              
 
