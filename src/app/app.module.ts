@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingModule} from './landing/landing.module';
 import { CompanyModule} from './company/company.module';
+import { SharedModule} from './shared/shared.module';
+
 
 import { from } from 'rxjs';
 
@@ -12,13 +14,13 @@ import { from } from 'rxjs';
 @NgModule({
   declarations: [
     AppComponent,
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
     LandingModule,
-    CompanyModule,
+    CompanyModule,    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,106 @@
-<p>
-  create-company works!
-</p>
+<div class="container">
+  <h1>Create Company</h1>
+  <!-- <div class="content-wrapper"> -->
+    
+  <form class="form" [formGroup]="companyForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+    <div class="col-md-4">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" formControlName="name" class="form-control" id="name" required>
+    </div>
+    </div>
+
+    <div class="col-md-4">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input  type="text" formControlName="email" class="form-control" id="email">
+    </div></div>
+
+    <div class="col-md-4">
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text"formControlName="phone" class="form-control" id="phone">
+    </div></div>
+
+    <div class="col-md-4">
+    <div class="form-group">
+        <label for="contactPerson">Contact Person</label>
+        <input type="text" formControlName="contactPerson" class="form-control" id="contactPerson">
+      </div></div>
+    
+      <div class="col-md-4">
+        <div class="form-group">
+            <label for="addressLine1">Address Line1</label>
+            <input type="text" formControlName="addressLine1" class="form-control" id="addressLine1">
+          </div></div>
+
+          <div class="col-md-4">
+          <div class="form-group">
+              <label for="addressLine2">Address Line2</label>
+              <input type="text" formControlName="addressLine2" class="form-control" id="addressLine2">
+            </div></div>
+
+            <div class="col-md-4">
+            <div class="form-group">
+                <label for="town">Town</label>
+                <input type="text" formControlName="town" class="form-control" id="town">
+              </div></div>
+              
+              
+              <div class="col-md-4">
+              <div class="form-group">
+                  <label for="county">County</label>
+                  <input type="text" formControlName="county" class="form-control" id="county">
+                </div></div>
+
+
+                <div class="col-md-4">
+                <div class="form-group">
+                    <label for="postcode">Postcode</label>
+                    <input type="text" formControlName="postcode" class="form-control" id="postcode">
+                  </div></div>
+
+                        <div class="col-md-4">
+                          <div class ="form-group">
+                            <label for="noOfLicense">Number Of Licenses Per Site(Bubll Master)</label>
+                            <input type="text" formControlName="noOfLicense" class="form-control" id="noOfLicense">
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+                          <div class="form-group">
+                              <label for="validFrom">ValidFrom</label>
+                              <input type="text" formControlName="validFrom" class="form-control" id="validFrom" 
+                           bsDatepicker  />
+                            </div></div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="ValidTo">ValidTo</label>
+                                <input id="validTo" formControlName="validTo"
+                            type="text" bsDatepicker class="form-control" />            
+                              </div></div>
+
+
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="status">Status</label>
+                                    <select class="form-control" ng-model="selectedName" ng-options="employee.id as employee.name for employee in employees" ng-init="">
+                                      <option value="0" selected="selected">Name1</option>
+                                      <option value="1">Name2</option>
+                                      <option value="2">Name3</option>
+                                     </select>  
+                                  </div></div>
+
+
+                                
+
+                             
+
+           <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+  </form>
+<!-- </div> -->
+</div>
+

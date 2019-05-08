@@ -5,6 +5,7 @@ import { LoginComponent } from './landing/login/login.component';
 import { CreateCompanyComponent } from './company/create-company/create-company.component';
 import { UpdateCompanyComponent } from './company/update-company/update-company.component';
 import { ListCompanyComponent } from './company/list-company/list-company.component';
+
 const routes: Routes = [
   {
     path:'',

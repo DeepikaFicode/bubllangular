@@ -1,15 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Token } from '@angular/compiler';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor() { }
+  email:string;
+  password:string;
+  constructor(private  _router:Router ) { }
 
   ngOnInit() {
+    this.getList();
+
   }
+  getList() {
+    
+  }
+
+  loginUser(){
+    let books = { 'email': this.email, 'password': this.password };
+    console.log(this.email , this.password);
+    
+     
+        
+        this._router.navigate(['company/create-company']);
+      }
+  
+  
+  
 
 }
