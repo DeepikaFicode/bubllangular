@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { formGroupNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { formControlBinding } from '@angular/forms/src/directives/reactive_directives/form_control_directive';
+
 
 
 @Component({
@@ -25,7 +28,18 @@ export class CreateCompanyComponent implements OnInit {
       'addressLine2':new FormControl(null),
       'town':new FormControl(null),
       'county':new FormControl(null),
-      'postcode':new FormControl(null)
+      'postcode':new FormControl(null),
+      'noOfLicense' :new FormControl(null),
+      'validFrom' :new FormControl(null),
+      'validTo' :new FormControl(null),
+      'status' :new FormControl(null),
+     'language' : new FormControl(null),
+     'support' : new FormControl (null),
+     'defaultLanguage' : new FormControl(null),
+     'controllerChangeLimit' :new FormControl(null),
+     'logo' :new FormControl(null),
+     'Background' :new FormControl(null)
+
   });
 
 }

@@ -1,127 +1,208 @@
+
 <div class="container">
-  <h1>Create Company</h1>
-  <!-- <div class="content-wrapper"> -->
-    
-  <form class="form" >
-    <div class="row">
-    <div class="col-md-4">
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" id="name" formControlName="name" class="form-control" required>
-    </div>
-    </div>
+    <h1>Create Company</h1>
+    <!-- <div class="content-wrapper"> -->
 
-    <div class="col-md-4">
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input  type="text" id="email" formControlName="email" class="form-control">
-    </div></div>
-
-    <div class="col-md-4">
-    <div class="form-group">
-      <label for="phone">Phone</label>
-      <input type="text" id="phone"formControlName="phone" class="form-control">
-    </div></div>
-
-    <div class="col-md-4">
-    <div class="form-group">
-        <label for="contactPerson">Contact Person</label>
-        <input type="text" id="contactPerson" formControlName="contactPerson" class="form-control">
-      </div></div>
-    
-      <div class="col-md-4">
-        <div class="form-group">
-            <label for="addressLine1">Address Line1</label>
-            <input type="text" id="addressLine1" formControlName="addressLine1" class="form-control">
-          </div></div>
-
-          <div class="col-md-4">
-          <div class="form-group">
-              <label for="addressLine2">Address Line2</label>
-              <input type="text" id="addressLine2" formControlName="addressLine2" class="form-control" >
-            </div></div>
+    <form class="form">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="name">Name<span class="required" style="color:red">*</span></label>
+                    <input type="text" id="name" formControlName="name" class="form-control" required>
+                </div>
+            </div>
 
             <div class="col-md-4">
-            <div class="form-group">
-                <label for="town">Town</label>
-                <input type="text" id="town" formControlName="town" class="form-control">
-              </div></div>
-              
-              
-              <div class="col-md-4">
-              <div class="form-group">
-                  <label for="county">County</label>
-                  <input type="text" id="county" formControlName="county" class="form-control">
-                </div></div>
-
-
-                <div class="col-md-4">
                 <div class="form-group">
-                    <label for="postcode">Postcode</label>
-                    <input type="text" id="postcode" formControlName="postcode" class="form-control" >
-                  </div></div>
-
-                        <div class="col-md-4">
-                          <div class ="form-group">
-                            <label for="noOfLicense">Number Of Licenses Per Site(Bubll Master)</label>
-                            <input type="text" id="noOfLicense" formControlName="noOfLicense" class="form-control" >
-                          </div>
-                        </div>
-
-                        <div class="col-md-4">
-                          <div class="form-group">
-                              <label for="validFrom">ValidFrom</label>
-                              <input type="text" id="validFrom" formControlName="validFrom" class="form-control"  
-                           bsDatepicker  />
-                            </div></div>
-
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="ValidTo">ValidTo</label>
-                                <input type="text" id="validTo" formControlName="validTo"class="form-control"
-                             bsDatepicker />            
-                              </div></div>
-
-
-                              <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="status">Status</label>
-                                    <select class="form-control" ng-model="selectedName">
-                                      <option value="1" selected="selected">Active </option>
-                                      <option value="0" selected="selected">InActive</option>                                 
-                                     </select>  
-                                  </div></div>
-
-                                  <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="support">Support</label>
-                                        <select class="form-control" ng-model="selectedName">
-                                          <option value="1" selected="selected">Yes</option>
-                                          <option value="0" selected="selected">No</option>                                 
-                                         </select>  
-                                      </div></div>
-
-                                      <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="support">Default Language</label>
-                                            <select class="form-control" ng-model="selectedName">                                                           
-                                             </select>  
-                                          </div></div>
-
-                                          <div class="col-md-4">
-                                          <div class="form-group">
-                                            <label for="fileupload">Upload</label>
-                                            <input type="file" class="form-control" [(ngModel)]="model.fileupload">
-                                        </div>
-                                      </div>
-    
-    
-
-                             
-
-           <button type="submit" class="btn btn-success">Submit</button>
+                    <label for="email">Email<span class="required" style="color:red">*</span></label>
+                    <input type="text" id="email" formControlName="email" class="form-control">
                 </div>
-  </form>
-<!-- </div> -->
-</div>
+            </div>
 
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="phone">Phone<span class="required" style="color:red">*</span></label>
+                    <input type="text" id="phone" formControlName="phone" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="contactPerson">Contact Person<span class="required" style="color:red">*</span></label>
+                    <input type="text" id="contactPerson" formControlName="contactPerson" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="addressLine1">Address Line1<span class="required" style="color:red">*</span></label>
+                    <input type="text" id="addressLine1" formControlName="addressLine1" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="addressLine2">Address Line2<span class="required" style="color:red">*</span></label>
+                    <input type="text" id="addressLine2" formControlName="addressLine2" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="town">Town<span class="required" style="color:red">*</span></label>
+                    <input type="text" id="town" formControlName="town" class="form-control">
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="county">County<span class="required" style="color:red">*</span></label>
+                    <input type="text" id="county" formControlName="county" class="form-control">
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="postcode">Postcode<span class="required" style="color:red">*</span></label>
+                    <input type="text" id="postcode" formControlName="postcode" class="form-control">
+                </div>
+            </div>
+
+
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="noOfLicense">Number Of Licenses Per Site(Bubll Master)<span class="required"
+                            style="color:red">*</span></label>
+                    <input type="text" id="noOfLicense" formControlName="noOfLicense" class="form-control">
+                </div>
+            </div>
+
+
+
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="validFrom">ValidFrom<span class="required" style="color:red">*</span></label>
+                    <input type="text" id="validFrom" formControlName="validFrom" bsDatepicker class="form-control" />
+                </div>
+            </div>
+
+
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="validTo">ValidTo<span class="required" style="color:red">*</span></label>
+                    <input type="text" id="validTo" formControlName="validTo" bsDatepicker class="form-control" />
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+
+
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>status<span class="required" style="color:red">*</span></label>
+                    <select>
+                        <option>Active</option>
+                        <option>Inactive</option>
+                    </select>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label>Language<span class="required" style="color:red">*</span></label>
+                        <p class="form-field pd-checkbox required no-label">
+                            <input id="checkbox1" name="checkbox1" onchange="" type="checkbox" value="">
+                            <label class="inline" for="checkbox1">Chinese (Simplified)</label>
+                        </p>
+                        <p class="form-field pd-checkbox required no-label">
+                            <input id="checkbox2" name="checkbox2" onchange="" type="checkbox" value="">
+                            <label class="inline" for="checkbox2">English</label>
+                        </p>
+                        <p class="form-field pd-checkbox required no-label">
+                            <input id="checkbox3" name="checkbox3" onchange="" type="checkbox" value="">
+                            <label class="inline" for="checkbox3">French</label>
+                        </p>
+                        <p class="form-field pd-checkbox required no-label">
+                            <input id="checkbox4" name="checkbox4" onchange="" type="checkbox" value="">
+                            <label class="inline" for="checkbox4">German</label>
+                        </p>
+                        <p class="form-field pd-checkbox required no-label">
+                            <input id="checkbox5" name="checkbox5" onchange="" type="checkbox" value="">
+                            <label class="inline" for="checkbox5">Russian</label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="status">Support<span class="required" style="color:red">*</span></label>
+                    <select class="from-control" formControlName="status">
+                        <option value="">Select ----</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="defaultLanguage">Default Language<span class="required"
+                            style="color:red">*</span></label>
+                    <input type="text" id="defaultLanguage" formControlName="defaultLanguage " class="form-control">
+                </div>
+            </div>
+
+
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="controllerChangeLimit">Controller Change Limit<span class="required"
+                            style="color:red">*</span></label>
+                    <input type="text" id="controllerChangeLimit" formControlName="controllerChangeLimit "
+                        class="form-control">
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <label>Logo<span class="required" style="color:red">*</span></label>
+                <div class="box">
+                    <div class="js--image-preview"></div>
+                    <div class="upload-options">
+                        <label>
+                            <input type="file" class="image-upload" formControlName="logo" accept="image/*" />
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <label>Background<span class="required" style="color:red">*</span></label>
+                <div class="box">
+                    <div class="js--image-preview"></div>
+                    <div class="upload-options">
+                        <label>
+                            <input type="file" class="image-upload" formControlName="background" accept="image/*" />
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="Back" class="btn ">BACK </button>
+        </div>
+    </form>
+    <!-- </div> -->
+</div>

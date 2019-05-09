@@ -14,6 +14,7 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule,
     CommonModule,
     CompanyRoutingModule
+    
   ]
 })
 export class CompanyModule { }
