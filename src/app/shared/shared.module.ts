@@ -9,6 +9,7 @@ import {MainComponent} from './Layout/main-component/main.component';
 import {RouterModule} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import {ReactiveFormsModule} from '@angular/forms';
+import { UserCommunicationModule } from './user-communication/user-communication.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     RouterModule,
     CommonModule,
     NgbPopoverModule,
+    UserCommunicationModule,
     RouterModule
   ],
   exports: [HeaderComponent, FooterComponent, SidebarComponent, InputControlMessagesComponent ]

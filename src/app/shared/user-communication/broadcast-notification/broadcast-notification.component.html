@@ -1,0 +1,136 @@
+
+<div class="page-head">
+  <h2>Broadcast Notification </h2>
+  <div class="right-bar">
+    <ul>
+      <li><a href="#">Company Dashboard</a></li>
+      <li>Company Profile </li>
+    </ul>
+    <a class="back-btn" href="#">Back</a>
+  </div>
+</div>
+
+<div class="update-profile-section">
+
+  <div class="right-sidebar">
+    <form [formGroup]="companyForm">
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Company Email<span class="required">*</span></label>
+            <input type="text" formControlName="email" [ngClass]="{ 'is-invalid': submitted && companyForm.controls.email.errors }" class="form-control" id="email" placeholder="Email">
+            <!--            <div class="validationError">-->
+            <!--              <control-messages [control]="companyForm.controls.email"-->
+            <!--                                [inputElmControl]="inputControls.company.email"></control-messages>-->
+            <!--            </div>-->
+
+            <div *ngIf="submitted && companyForm.controls.email.errors" class="invalid-feedback">
+              <div *ngIf="companyForm.controls.email.errors.required">Email is required</div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Title</label>
+            <textarea formControlName="title" [ngClass]="{ 'is-invalid': submitted && companyForm.controls.title.errors }" class="form-control" id="title" placeholder="Title"></textarea>
+            <!--            <div class="validationError">-->
+            <!--              <control-messages [control]="companyForm.controls.addressLine2"-->
+            <!--                                [inputElmControl]="inputControls.company.addressLine2"></control-messages>-->
+            <!--            </div>-->
+            <div *ngIf="submitted && companyForm.controls.title.errors" class="invalid-feedback">
+              <div *ngIf="companyForm.controls.title.errors.required"> required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Message</label>
+            <textarea formControlName="addressLine2" [ngClass]="{ 'is-invalid': submitted && companyForm.controls.addressLine2.errors }" class="form-control" id="message" placeholder="Message :: Max Length 150 Characters"></textarea>
+            <!--            <div class="validationError">-->
+            <!--              <control-messages [control]="companyForm.controls.addressLine2"-->
+            <!--                                [inputElmControl]="inputControls.company.addressLine2"></control-messages>-->
+            <!--            </div>-->
+            <div *ngIf="submitted && companyForm.controls.addressLine2.errors" class="invalid-feedback">
+              <div *ngIf="companyForm.controls.addressLine2.errors.required"> required</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div class="col-md-12">
+        <input (click) = "onSubmit()" class="update-btn" type="button" value="Send">
+      </div>
+
+
+    </form>
+  </div>
+</div>
+<div class="company-tables">
+  <div class="main-content">
+    <div class="top-header">
+      <h3>SRegistered Company(s)</h3>
+      <div class="event-num">
+        <!--		Show Numbers Of Rows 		-->
+        <!--        <select class="form-control mar-right10" name="state" id="maxRows">-->
+        <!--          <option value="1">Export To Excel</option>-->
+        <!--         -->
+        <!--        </select>-->
+
+
+        <!--        <button (click)="exportAsXLSX()"><i class="btn dark-blue" href="#"></i></button>-->
+
+        <div class="buttons " (click)="exportAsXLSX()"><a class="btn dark-blue" href="#">Export To Excel</a></div>
+        <div class="buttons "><a class="btn dark-blue" href="#">Back</a></div>
+      </div>
+    </div>
+    <table class="table table-class user-table" id="table-id">
+      <thead>
+      <tr><th>Row</th>
+        <th>Company Id</th>
+        <th>Company Name</th>
+        <th>Email</th>
+        <th>Valid From</th>
+        <th>Valid To</th>
+        <th>Address</th>
+        <th>Support Required</th>
+        <th>Controller Limit</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr></thead>
+      <tbody>
+      <tr *ngFor="let item of data">
+        <td>{{item.rowid}}</td>
+        <td>{{item.companyid}}</td>
+        <td>{{item.companyname}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.validFrom}}</td>
+        <td>{{item.validTo}}</td>
+        <td>{{item.address}}</td>
+        <td>{{item.supportRequired}}</td>
+        <td>{{item.controllerLimit}}</td>
+        <td>{{item.status}}</td>
+        <td><button class="btn" (click)="confirmationPopUp()" >Change Status</button></td>
+      </tr>
+
+      </tbody>
+    </table>
+    <div class="pagination-container">
+      <nav>
+        <ul class="pagination">
+          <li data-page="1" class="active"> <span>1<span class="sr-only">(current)</span></span> </li>
+          <li data-page="2"> <span>2<span class="sr-only">(current)</span></span> </li>
+          <li data-page="3"> <span>3<span class="sr-only">(current)</span></span> </li>
+        </ul>
+      </nav>
+      <div class="rows_count">Showing 1 to 10 of 27 entries</div>
+    </div>
+  </div>
+</div>

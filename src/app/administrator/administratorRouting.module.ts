@@ -8,7 +8,9 @@ import {AdministratorComponent} from './administrator.component';
 import {CompanyProfileComponent} from './company-profile/company-profile.component';
 import {SystemEventComponent} from './system-event/system-event.component';
 import {WellbeingComponent} from './wellbeing/wellbeing.component';
-
+import { BroadcastNotificationComponent } from '../shared/user-communication/broadcast-notification/broadcast-notification.component';
+import {ManualDocumentsComponent} from '../shared/user-communication/manual-documents/manual-documents.component';
+import {SendManualComponent} from '../shared/user-communication/send-manual/send-manual.component';
 const routes: Routes = [
   {
     path: 'administrator',
@@ -45,6 +47,20 @@ const routes: Routes = [
       {
         path: 'companyUserWellbeing',
         component: WellbeingComponent
+      },
+      {
+        path: 'broadcastNotification',
+        component: BroadcastNotificationComponent
+      },
+
+      {
+        path: 'manualDocuments',
+        component: ManualDocumentsComponent
+      },
+
+      {
+        path: 'sendManual',
+        component: SendManualComponent
       },
     ]
   }

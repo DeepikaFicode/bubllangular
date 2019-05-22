@@ -1,0 +1,34 @@
+<div id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Sign In {{submitted}}</h3>
+        <button (click)="closeModal()" type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <form class="form" [formGroup]="SupportLoginForm" (ngSubmit)="onSubmit()" autocomplete="off" id="formLogin1" novalidate="" method="POST">
+          <div class="form-group">
+            <input type="text" formControlName="email" placeholder="Email" class="form-control form-control-lg" name="uname1" id="uname1" required="">
+            <div class="validationError">
+              <control-messages [control]="SupportLoginForm.controls.email"
+              [inputElmControl]="inputControls.login.email"></control-messages>
+            </div>
+
+          </div>
+          <div class="form-group">
+            <input type="password" formControlName="password" placeholder="Password" class="form-control form-control-lg" id="pwd1" required="" autocomplete="new-password">
+            <div class="validationError">
+              <control-messages [control]="SupportLoginForm.controls.password"
+                   [inputElmControl]="inputControls.login.password"></control-messages>
+            </div>
+          </div>
+          <div class="form-group login-bottom">
+            <button type="submit" [disabled]="!SupportLoginForm.valid" class="btn btn-success btn-lg float-right" id="btnLogin">Login</button>
+            <a (click)="forgotPassword()" href="#" class="float-left" data-toggle="modal" data-target="#" data-dismiss="modal"><u>Forget Password?</u></a>
+            <a (click)="closeModal()" class="float-right">Register</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

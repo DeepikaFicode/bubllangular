@@ -17,6 +17,10 @@ import { SupportLoginComponent } from './support-login/support-login.component';
 import {SystemEventComponent} from './system-event/system-event.component';
 import {SupportLogin} from './support-login/supportLogin';
 import {WellbeingComponent} from './wellbeing/wellbeing.component';
+import {BroadcastNotificationComponent
+} from '../shared/user-communication/broadcast-notification/broadcast-notification.component';
+import {ManualDocumentsComponent} from '../shared/user-communication/manual-documents/manual-documents.component';
+import {SendManualComponent} from '../shared/user-communication/send-manual/send-manual.component';
 
 @NgModule({
   // tslint:disable-next-line:max-line-length
@@ -29,7 +33,10 @@ import {WellbeingComponent} from './wellbeing/wellbeing.component';
     ConfirmationPopupComponent,
     SystemEventComponent,
     WellbeingComponent,
-    SupportLoginComponent
+    SupportLoginComponent,
+    BroadcastNotificationComponent,
+    ManualDocumentsComponent,
+    SendManualComponent
   ],
   imports: [
     SharedModule,
