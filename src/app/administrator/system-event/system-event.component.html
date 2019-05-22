@@ -84,7 +84,7 @@
               <div class="form-group">
                 <label for="fromdate">From Date</label>
                 <input id="fromdate" name="fromdate" [(ngModel)]="fromdate"
-                       type="date" class="form-control" (keyup)='filterById($event.target.value)' />
+                       type="date" class="form-control" />
               </div>
 
             </div>
@@ -92,13 +92,13 @@
               <label>To Date </label>
               <div class="form-group">
                 <input id="todate" name="todate" [(ngModel)]="todate"
-                       type="date" class="form-control" (keyup)='filterById($event.target.value)' />
+                       type="date" class="form-control" />
               </div>
 
 <!--  <input type="text" id="search_input_all"  placeholder="22/04/2019" class="form-control">-->
 
             </div>
-            <div class="col-sm-3 buttons m-t33"> <a class="btn dark-blue" href="#">Search</a> <a class="btn" href="#">Back</a> </div>
+            <div class="col-sm-3 buttons m-t33"> <button class="btn dark-blue" (click)='registeredUser($event)'>Search</button> <a class="btn" href="#">Back</a> </div>
           </div>
         </div>
       </div>
@@ -128,7 +128,7 @@
           <th>Date Time</th>
           </thead>
           <tbody>
-          <tr *ngFor="let item of systemEvent">
+          <tr *ngFor="let item of filterData">
             <td>{{item.row}}</td>
             <td>{{item.userName}}</td>
             <td>{{item.deviceName}}</td>
@@ -137,18 +137,7 @@
             <td>{{item.objectStatus}}</td>
             <td><a href="">View</a></td>
             <td>{{item.dateTime}}</td>
-          </tr>
-          <tr>
-
-            <td>{{item.row}}</td>
-            <td>{{item.userName}}</td>
-            <td>{{item.deviceName}}</td>
-            <td>{{item.roomName}}</td>
-            <td>{{item.objectName}}</td>
-            <td>{{item.objectStatus}}</td>
-            <td><a href="">View</a></td>
-            <td>{{item.dateTime}}</td>
-          </tr>
+          </tr>      
 
           </tbody>
         </table>
