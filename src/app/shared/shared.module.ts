@@ -9,7 +9,7 @@ import {MainComponent} from './Layout/main-component/main.component';
 import {RouterModule} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import {ReactiveFormsModule} from '@angular/forms';
-import { UserCommunicationModule } from './user-communication/user-communication.module';
+import {UserCommunicationModule } from './user-communication/user-communication.module';
 
 
 @NgModule({

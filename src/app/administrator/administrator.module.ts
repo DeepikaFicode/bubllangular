@@ -22,6 +22,7 @@ import {BroadcastNotificationComponent
 import {ManualDocumentsComponent} from '../shared/user-communication/manual-documents/manual-documents.component';
 import {SendManualComponent} from '../shared/user-communication/send-manual/send-manual.component';
 
+
 @NgModule({
   // tslint:disable-next-line:max-line-length
   declarations: [

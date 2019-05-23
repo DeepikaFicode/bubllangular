@@ -21,7 +21,6 @@ export class ConfirmationPopupComponent implements OnInit {
     } else if (this.action === IConstants.APPROVAL_STATUS) {
       this.confirmText = IConstants.APPROVAL_MESSAGE + ' approve?';
     }
-
   }
   /**
    * Method used to close the modal

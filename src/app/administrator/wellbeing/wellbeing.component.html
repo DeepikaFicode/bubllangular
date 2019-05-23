@@ -1,5 +1,5 @@
 <div class="page-head">
-  <h2>Company Profile</h2>
+  <h2>Well Being</h2>
   <ul>
     <li><a href="#">Super User Dashboard </a></li>
     <li>Company Profile</li>
@@ -20,35 +20,56 @@
                 <option value="archiev">Archive Data</option>
               </select>
             </div>
+
+<!--            <div class="col-sm-3">-->
+<!--              <div class="form-group">-->
+<!--                <label for="fromdate">From Date</label>-->
+<!--                <input id="fromdate" name="fromdate" [(ngModel)]="fromdate"-->
+<!--                       type="date" class="form-control" />-->
+<!--              </div>-->
+<!--&lt;!&ndash;              <label>From Date </label>&ndash;&gt;-->
+<!--&lt;!&ndash;              <input type="text" id="search_input_all"  placeholder="26/04/2019" class="form-control">&ndash;&gt;-->
+<!--            </div>-->
+
+<!--            <div class="col-sm-3">-->
+<!--&lt;!&ndash;              <label>To Date </label>&ndash;&gt;-->
+<!--&lt;!&ndash;              <input type="text" id="search_input_all"  placeholder="22/04/2019" class="form-control">&ndash;&gt;-->
+
+<!--              <div class="form-group">-->
+<!--                <label for="fromdate">From To</label>-->
+<!--                <input id="fromto" name="fromto" [(ngModel)]="fromto"-->
+<!--                       type="date" class="form-control" />-->
+<!--              </div>-->
+<!--            </div>-->
+
+
             <div class="col-sm-3">
               <div class="form-group">
-                <label for="fromdate">From Date</label>
+              <label for="fromdate">From Date</label>
                 <input id="fromdate" name="fromdate" [(ngModel)]="fromdate"
                        type="date" class="form-control" />
               </div>
-<!--              <label>From Date </label>-->
-<!--              <input type="text" id="search_input_all"  placeholder="26/04/2019" class="form-control">-->
             </div>
+
 
             <div class="col-sm-3">
-<!--              <label>To Date </label>-->
-<!--              <input type="text" id="search_input_all"  placeholder="22/04/2019" class="form-control">-->
-
               <div class="form-group">
-                <label for="fromdate">From To</label>
-                <input id="fromto" name="fromto" [(ngModel)]="fromto"
+                <label for="todate">To Date </label>
+                <input id="todate" name="todate" [(ngModel)]="todate"
                        type="date" class="form-control" />
               </div>
-            </div>
-            <div class="col-sm-3 buttons m-t33"> <a class="btn dark-blue" href="#">Search</a> <a class="btn" href="#">Back</a> </div>
+
+            <div class="col-sm-3 buttons m-t33"> <a class="btn dark-blue" (click)='searchWellBeing($event)'>Search</a> <a class="btn" href="#">Back</a> </div>
+
           </div>
+
         </div>
       </div>
     </div>
     <div class="col-md-12">
       <div class="main-content">
         <div class="top-header">
-          <h3>Wellbeing(s)</h3>
+          <h3>Well Being(s)</h3>
           <div class="event-num">
             <!--		Show Numbers Of Rows 		-->
             <select class="form-control mar-right10" name="state" id="maxRows">
@@ -73,7 +94,7 @@
           <th>Action</th>
           </thead>
           <tbody>
-          <tr *ngFor="let item of wellbeing">
+          <tr *ngFor="let item of filterData">
             <td>{{item.row}}</td>
             <td>{{item.userName}}</td>
             <td>{{item.deviceName}}</td>
@@ -103,4 +124,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FormBuilder, FormGroup} from '@angular/forms';
@@ -16,10 +16,11 @@ import {MatCheckboxModule} from '@angular/material';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import {NgbActiveModal, NgbModule, NgbPopoverModule} from '@ng-bootstrap/ng-bootstrap';
-
+import { ModalModule } from './shared/modal/modal.module';
 import {from} from 'rxjs';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {importExpr} from '@angular/compiler/src/output/output_ast';
 
 
 @NgModule({
@@ -45,10 +46,13 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MatIconModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
+    ModalModule
     //UserCommunicationModule
   ],
+  exports:[ModalModule],
   providers: [NgbActiveModal],
   entryComponents: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule {

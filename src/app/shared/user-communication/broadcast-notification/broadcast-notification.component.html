@@ -13,50 +13,37 @@
 <div class="update-profile-section">
 
   <div class="right-sidebar">
-    <form [formGroup]="companyForm">
+    <form [formGroup]="broadcastNotificationForm">
       <div class="row">
 
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="form-group">
-            <label>Company Email<span class="required">*</span></label>
-            <input type="text" formControlName="email" [ngClass]="{ 'is-invalid': submitted && companyForm.controls.email.errors }" class="form-control" id="email" placeholder="Email">
-            <!--            <div class="validationError">-->
-            <!--              <control-messages [control]="companyForm.controls.email"-->
-            <!--                                [inputElmControl]="inputControls.company.email"></control-messages>-->
-            <!--            </div>-->
+            <label>Company Email</label>
+            <input type="text" formControlName="companyemail"  class="form-control" id="companyemail" placeholder="Email">
 
-            <div *ngIf="submitted && companyForm.controls.email.errors" class="invalid-feedback">
-              <div *ngIf="companyForm.controls.email.errors.required">Email is required</div>
-            </div>
           </div>
 
         </div>
 
 
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="form-group">
-            <label>Title</label>
-            <textarea formControlName="title" [ngClass]="{ 'is-invalid': submitted && companyForm.controls.title.errors }" class="form-control" id="title" placeholder="Title"></textarea>
-            <!--            <div class="validationError">-->
-            <!--              <control-messages [control]="companyForm.controls.addressLine2"-->
-            <!--                                [inputElmControl]="inputControls.company.addressLine2"></control-messages>-->
-            <!--            </div>-->
-            <div *ngIf="submitted && companyForm.controls.title.errors" class="invalid-feedback">
-              <div *ngIf="companyForm.controls.title.errors.required"> required</div>
+            <label>Title<span class="required">*</span></label>
+            <textarea formControlName="title" [ngClass]="{ 'is-invalid': submitted && broadcastNotificationForm.controls.title.errors }" class="form-control" id="title" placeholder="Title"></textarea>
+
+            <div *ngIf="submitted && broadcastNotificationForm.controls.title.errors" class="invalid-feedback">
+              <div *ngIf="broadcastNotificationForm.controls.title.errors.required"> required</div>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-6">
           <div class="form-group">
-            <label>Message</label>
-            <textarea formControlName="addressLine2" [ngClass]="{ 'is-invalid': submitted && companyForm.controls.addressLine2.errors }" class="form-control" id="message" placeholder="Message :: Max Length 150 Characters"></textarea>
-            <!--            <div class="validationError">-->
-            <!--              <control-messages [control]="companyForm.controls.addressLine2"-->
-            <!--                                [inputElmControl]="inputControls.company.addressLine2"></control-messages>-->
-            <!--            </div>-->
-            <div *ngIf="submitted && companyForm.controls.addressLine2.errors" class="invalid-feedback">
-              <div *ngIf="companyForm.controls.addressLine2.errors.required"> required</div>
+            <label>Message<span class="required">*</span></label>
+            <textarea formControlName="message" ng-model="message" [ngClass]="{ 'is-invalid': submitted && broadcastNotificationForm.controls.message.errors }" class="form-control" id="message" placeholder="Message :: Max Length 150 Characters"></textarea>
+
+            <div *ngIf="submitted && broadcastNotificationForm.controls.message.errors" class="invalid-feedback">
+              <div *ngIf="broadcastNotificationForm.controls.message.errors.required"> required</div>
             </div>
           </div>
         </div>
@@ -76,48 +63,33 @@
 <div class="company-tables">
   <div class="main-content">
     <div class="top-header">
-      <h3>SRegistered Company(s)</h3>
-      <div class="event-num">
-        <!--		Show Numbers Of Rows 		-->
-        <!--        <select class="form-control mar-right10" name="state" id="maxRows">-->
-        <!--          <option value="1">Export To Excel</option>-->
-        <!--         -->
-        <!--        </select>-->
-
-
-        <!--        <button (click)="exportAsXLSX()"><i class="btn dark-blue" href="#"></i></button>-->
-
-        <div class="buttons " (click)="exportAsXLSX()"><a class="btn dark-blue" href="#">Export To Excel</a></div>
-        <div class="buttons "><a class="btn dark-blue" href="#">Back</a></div>
-      </div>
+      <h3>Broadcast Notification(s)</h3>
     </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" id="searchTitle" placeholder="Title" (keyup)='filterByTitle($event.target.value)'>
+        </div>
+      </div>
+   <div class="col-sm-3 buttons m-t33"> <a class="btn dark-blue">Search</a> <a class="btn">Refresh</a> </div>
+    </div>
+
     <table class="table table-class user-table" id="table-id">
       <thead>
       <tr><th>Row</th>
-        <th>Company Id</th>
-        <th>Company Name</th>
-        <th>Email</th>
-        <th>Valid From</th>
-        <th>Valid To</th>
-        <th>Address</th>
-        <th>Support Required</th>
-        <th>Controller Limit</th>
-        <th>Status</th>
-        <th>Action</th>
+        <th>Date Time</th>
+        <th>Title</th>
+        <th>Message</th>
+
       </tr></thead>
       <tbody>
-      <tr *ngFor="let item of data">
+      <tr *ngFor ="let item of filterData">
         <td>{{item.rowid}}</td>
-        <td>{{item.companyid}}</td>
-        <td>{{item.companyname}}</td>
-        <td>{{item.email}}</td>
-        <td>{{item.validFrom}}</td>
-        <td>{{item.validTo}}</td>
-        <td>{{item.address}}</td>
-        <td>{{item.supportRequired}}</td>
-        <td>{{item.controllerLimit}}</td>
-        <td>{{item.status}}</td>
-        <td><button class="btn" (click)="confirmationPopUp()" >Change Status</button></td>
+        <td>{{item.datetime}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.message}}</td>
       </tr>
 
       </tbody>

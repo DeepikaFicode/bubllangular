@@ -1,0 +1,9 @@
+// Dirty show display modal dialog to user to confirm leaving
+
+    const modalContent: IModalContent = {
+      header: 'Lose Unsaved Changes?',
+      body: 'You have unsaved changes! Would you like to leave the page and lose them?',
+      cancelButtonText: 'Cancel',
+      OKButtonText: 'Leave'
+    };
+    return this.modalService.show(modalContent);

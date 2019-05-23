@@ -13,9 +13,10 @@ import {ExcelService} from '../../shared/excelService/excel.service';
   styleUrls: ['./wellbeing.component.css']
 })
 export class WellbeingComponent implements OnInit {
+  fromdate;
+  todate;
 
-
-  wellbeing = [{
+  wellBeing = [{
     row: '1',
     userName: 'deepika',
     deviceName: 'tab',
@@ -41,13 +42,56 @@ export class WellbeingComponent implements OnInit {
       roomName: 'livingRoom',
     }
   ];
-
-  constructor( private excelService: ExcelService, ) { }
+  filterData;
+  constructor( private excelService: ExcelService, ) {
+    this.filterData = this.wellBeing;
+  }
   exportAsXLSX(): void {
-    this.excelService.exportAsExcelFile(this.wellbeing, 'sample');
+    this.excelService.exportAsExcelFile(this.wellBeing, 'sample');
   }
 
   ngOnInit() {
   }
 
+  filterById(value) {
+    this.filterData = this.wellBeing.filter((moredata) => {
+      return moredata.dateTime.toLowerCase().indexOf(value.toLowerCase()) > -1;
+    });
+
+  }
+
+  filterByName(value) {
+    this.filterData = this.wellBeing.filter((moredata) => {
+      return moredata.dateTime.toLowerCase().indexOf(value.toLowerCase()) > -1;
+    });
+  }
+
+  searchWellBeing() {
+    this.filterByDates(this.fromdate, this .todate);
+  }
+
+  filterByDates(fromDate, Todate) {
+    const date1 = new Date(fromDate);
+    const date2 = new Date(Todate);
+
+    if (date1.getTime() > date2.getTime()) {
+      alert('The first date is after the second date!');
+    } else {
+
+      this.filterData = this.wellBeing.filter((moredata) => {
+
+        const arrayDate = this.convertDate(moredata.dateTime);
+
+        if ( (arrayDate.getTime() > date1.getTime() ) && ( arrayDate.getTime() < date2.getTime() ) ) {
+          return moredata;
+        }
+      });
+    }
+  }
+
+  convertDate(dateToConvert) {
+    const pattern = /(\d{2})\/(\d{2})\/(\d{4})/;
+    const dt = new Date(dateToConvert.replace(pattern, '$3-$2-$1'));
+    return dt;
+  }
 }
