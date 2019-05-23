@@ -21,6 +21,7 @@ import {BroadcastNotificationComponent
 } from '../shared/user-communication/broadcast-notification/broadcast-notification.component';
 import {ManualDocumentsComponent} from '../shared/user-communication/manual-documents/manual-documents.component';
 import {SendManualComponent} from '../shared/user-communication/send-manual/send-manual.component';
+import { AdminSettingsComponent } from '../administrator/admin-settings/admin-settings.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import {SendManualComponent} from '../shared/user-communication/send-manual/send
     SupportLoginComponent,
     BroadcastNotificationComponent,
     ManualDocumentsComponent,
-    SendManualComponent
+    SendManualComponent,
+    AdminSettingsComponent
   ],
   imports: [
     SharedModule,

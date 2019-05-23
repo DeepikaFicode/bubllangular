@@ -5,9 +5,13 @@ import {NavigateUrls} from '../../shared/utils/NavigateUrls';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ExcelService} from '../../shared/excelService/excel.service';
+<<<<<<< HEAD
 import {ConfirmationPopupComponent} from '../../shared/utils/confirmation-popup/confirmation-popup.component';
 import {IModalContent, ModalService} from '../../shared/modal/modal.service';
 
+=======
+import { NgForm } from '@angular/forms';
+>>>>>>> 9081520f0a8267a1ad38ab85e11a2d7803825f04
 
 
 @Component({
@@ -16,10 +20,16 @@ import {IModalContent, ModalService} from '../../shared/modal/modal.service';
   styleUrls: ['./system-event.component.css']
 })
 export class SystemEventComponent implements OnInit {
+<<<<<<< HEAD
   fromdate;
   todate;
   filterData;
 
+=======
+  fromdate:Date;
+  todate:Date;
+  //@ViewChild('ref') signupForm: NgForm; 
+>>>>>>> 9081520f0a8267a1ad38ab85e11a2d7803825f04
   systemEvent = [{
     row: '1',
     userName: 'deepika',
@@ -75,6 +85,7 @@ export class SystemEventComponent implements OnInit {
     this.excelService.exportAsExcelFile(this.systemEvent, 'sample');
   }
 
+<<<<<<< HEAD
 // searchbetweenthedates() {
 //   this.filterData = this.systemEvent.filter((m) => {
 //     const pattern = /(\d{2})\/(\d{2})\/(\d{4})/;
@@ -107,6 +118,10 @@ export class SystemEventComponent implements OnInit {
   hide() {
     this.modalVisibleAnimate = false;
     setTimeout(() => this.modalVisible = false, 300);
+=======
+  ngOnInit() {   
+    
+>>>>>>> 9081520f0a8267a1ad38ab85e11a2d7803825f04
   }
 
   filterById(value) {
@@ -121,6 +136,7 @@ export class SystemEventComponent implements OnInit {
     });
   }
 
+<<<<<<< HEAD
   searchUser() {
     this.filterByDates(this.fromdate, this .todate);
   }
@@ -137,10 +153,27 @@ export class SystemEventComponent implements OnInit {
       this.filterData = this.systemEvent.filter((moredata) => {
         const arrayDate = this.convertDate(moredata.dateTime);
         if ( (arrayDate.getTime() > date1.getTime() ) && ( arrayDate.getTime() < date2.getTime() ) ) {
+=======
+  registeredUser(){    
+    this.filterByDates(this.fromdate,this.todate);     
+  }
+
+  filterByDates(fromDate,Todate) {
+    var date1 = new Date(fromDate);
+    var date2 = new Date(Todate);
+   
+    if (date1.getTime() > date2.getTime()) {
+      alert("The first date is after the second date!");
+    }else{
+      this.filterData = this.systemEvent.filter((moredata) => {
+        var arrayDate = this.convertDate(moredata.dateTime);
+        if( (arrayDate.getTime() > date1.getTime() ) && ( arrayDate.getTime() < date2.getTime() ) ){         
+>>>>>>> 9081520f0a8267a1ad38ab85e11a2d7803825f04
           return moredata;
         }
       });
     }
+<<<<<<< HEAD
   }
 
   convertDate(dateToConvert) {
@@ -151,6 +184,16 @@ export class SystemEventComponent implements OnInit {
 
 
 
+=======
+   }
+
+   convertDate(dateToConvert){
+    var pattern = /(\d{2})\/(\d{2})\/(\d{4})/;
+    var dt = new Date(dateToConvert.replace(pattern,'$3-$2-$1'));
+    return dt;
+  }
+
+>>>>>>> 9081520f0a8267a1ad38ab85e11a2d7803825f04
 }
 
 
